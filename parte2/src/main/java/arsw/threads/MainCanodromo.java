@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-public class MainCanodromo {
+public class MainCanodromo{
 
     private static Galgo[] galgos;
 
@@ -36,10 +36,20 @@ public class MainCanodromo {
                                     galgos[i] = new Galgo(can.getCarril(i), "" + i, reg);
                                     //inicia los hilos
                                     galgos[i].start();
-
+                                    
+                                    //Comienzo de Desarrollo parte II
                                 }
                                
-				can.winnerDialog(reg.getGanador(),reg.getUltimaPosicionAlcanzada() - 1); 
+                                for (int i = 0; i < can.getNumCarriles(); i++) {
+                                    try {
+                                       galgos[i].join();
+                                       
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+
+				                can.winnerDialog(reg.getGanador(),reg.getUltimaPosicionAlcanzada() - 1); 
                                 System.out.println("El ganador fue:" + reg.getGanador());
                             }
                         }.start();
