@@ -43,7 +43,10 @@ Se modifica el main en el sentido de poder iniciar los hilos de manera exitosa, 
 Se crean métodos de resume y pause thread que a su misma vez van a permitir que el programa funcione correctamente
 
 
-#####Parte II 
+---------------------------------------------------------------------------
+
+
+### Parte II 
 
 
 Para este ejercicio se va a trabajar con un simulador de carreras de galgos (carpeta parte2), cuya representación gráfica corresponde a la siguiente figura:
@@ -71,6 +74,10 @@ Taller.
 
     b.  Puede utilizarse el método join() de la clase Thread para sincronizar el hilo que inicia la carrera, con la finalización de los hilos de los galgos.
 
+      ![image](https://github.com/user-attachments/assets/1d00a702-23a2-4600-8a8a-50f4d2c63beb)
+
+      Se usa el metodo join desde lo requerido para poder ejecutarlo correctamente despues de la linea 38, esto para sincronizar el inicio con el fin de la carrera
+
 2.  Una vez corregido el problema inicial, corra la aplicación varias
     veces, e identifique las inconsistencias en los resultados de las
     mismas viendo el ‘ranking’ mostrado en consola (algunas veces
@@ -78,15 +85,33 @@ Taller.
     dichas inconsistencias). A partir de esto, identifique las regiones
     críticas () del programa.
 
-3.  Utilice un mecanismo de sincronización para garantizar que a dichas
+    <div align="justify">
+    Se encuentra la inconsistencia del error al no haber terminado la carrera y la aparicion del mensaje de que la carrera ya ha terminado
+    </div>
+
+    
+
+4.  Utilice un mecanismo de sincronización para garantizar que a dichas
     regiones críticas sólo acceda un hilo a la vez. Verifique los
     resultados.
+      ![image](https://github.com/user-attachments/assets/a3ca7dc7-12c5-4372-bdff-6b9cd64a0ec7)
 
-4.  Implemente las funcionalidades de pausa y continuar. Con estas,
+
+
+5.  Implemente las funcionalidades de pausa y continuar. Con estas,
     cuando se haga clic en ‘Stop’, todos los hilos de los galgos
     deberían dormirse, y cuando se haga clic en ‘Continue’ los mismos
     deberían despertarse y continuar con la carrera. Diseñe una solución que permita hacer esto utilizando los mecanismos de sincronización con las primitivas de los Locks provistos por el lenguaje (wait y notifyAll).
 
+   En la clase de Galgo
+   
+   ![image](https://github.com/user-attachments/assets/1742291f-df17-4639-9d73-8330b5bd7b5f)
+
+   En el Main
+
+   ![image](https://github.com/user-attachments/assets/6b389b7b-9f75-41ad-a771-562c1b259612)
+
+   
 
 ## Criterios de evaluación
 
