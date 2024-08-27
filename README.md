@@ -2,18 +2,45 @@ Escuela Colombiana de Ingeniería
 
 Arquitecturas de Software – ARSW
 
-####Taller – programación concurrente, condiciones de carrera y sincronización de hilos. EJERCICIO INDIVIDUAL O EN PAREJAS.
+#### Taller – programación concurrente, condiciones de carrera y sincronización de hilos. EJERCICIO INDIVIDUAL O EN PAREJAS.
 
-#####Parte I – Antes de terminar la clase.
+
+-----------------------------------------------------------------------------------------
+#### Realizado por: Nicolas Sebastian Achuri Macias y Ricardo Andres Villamizar Mendez
+---------------------------------------------------------------------------------------
+
+
+##### Parte I – Antes de terminar la clase.
 
 Creación, puesta en marcha y coordinación de hilos.
 
 1. Revise el programa “primos concurrentes” (en la carpeta parte1), dispuesto en el paquete edu.eci.arsw.primefinder. Este es un programa que calcula los números primos entre dos intervalos, distribuyendo la búsqueda de los mismos entre hilos independientes. Por ahora, tiene un único hilo de ejecución que busca los primos entre 0 y 30.000.000. Ejecútelo, abra el administrador de procesos del sistema operativo, y verifique cuantos núcleos son usados por el mismo.
 
+   ![image](https://github.com/user-attachments/assets/03230955-c18f-4bbe-a29a-daed5e2c82f7)
+
+
 2. Modifique el programa para que, en lugar de resolver el problema con un solo hilo, lo haga con tres, donde cada uno de éstos hará la tarcera parte del problema original. Verifique nuevamente el funcionamiento, y nuevamente revise el uso de los núcleos del equipo.
+
+```
+        PrimeFinderThread pft=new PrimeFinderThread(0, 10000000);
+        PrimeFinderThread pft2 = new PrimeFinderThread(10000001, 20000000);
+        PrimeFinderThread pft3 = new PrimeFinderThread(20000001, 30000000);
+        pft.start();
+        pft2.start();
+        pft3.start();
+        
+```
+
+![image](https://github.com/user-attachments/assets/f9300525-e861-4c43-b501-45dd20ac5032)
+
 
 3. Lo que se le ha pedido es: debe modificar la aplicación de manera que cuando hayan transcurrido 5 segundos desde que se inició la ejecución, se detengan todos los hilos y se muestre el número de primos encontrados hasta el momento. Luego, se debe esperar a que el usuario presione ENTER para reanudar la ejecución de los mismo.
 
+Se modifica el main en el sentido de poder iniciar los hilos de manera exitosa, el generar un wait y un notify al momento de sincronizar los hilos y poder generarlos en diferentes momentos por medio del uso de métodos de manera correcta
+
+![image](https://github.com/user-attachments/assets/d37a3ebc-2e03-4404-a9ac-01518f4fd4dc)
+
+Se crean métodos de resume y pause thread que a su misma vez van a permitir que el programa funcione correctamente
 
 
 #####Parte II 
