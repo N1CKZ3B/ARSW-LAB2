@@ -112,13 +112,18 @@ Taller.
 
    En la clase de Galgo
    
-    &emsp;&emsp;&emsp;![](img/media/uso-waitynotify.png)
+   &emsp;&emsp;&emsp;![](img/media/uso-waitynotify.png)
 
    En el Main
 
-    &emsp;&emsp;&emsp;![](img/media/parte2-stopyresume.png)
+ &emsp;&emsp;&emsp;![](img/media/parte2-stopyresume.png)
 
-   
+   ----------------------------------------------------
+
+   ## FUNCIONAMIENTO 
+
+   ![image](https://github.com/user-attachments/assets/56fa8e72-4fc9-45d3-bf69-9a5222508d4e)
+
 
 ## Criterios de evaluación
 
