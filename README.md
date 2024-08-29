@@ -16,7 +16,7 @@ Creación, puesta en marcha y coordinación de hilos.
 
 1. Revise el programa “primos concurrentes” (en la carpeta parte1), dispuesto en el paquete edu.eci.arsw.primefinder. Este es un programa que calcula los números primos entre dos intervalos, distribuyendo la búsqueda de los mismos entre hilos independientes. Por ahora, tiene un único hilo de ejecución que busca los primos entre 0 y 30.000.000. Ejecútelo, abra el administrador de procesos del sistema operativo, y verifique cuantos núcleos son usados por el mismo.
 
-   ![image](https://github.com/user-attachments/assets/03230955-c18f-4bbe-a29a-daed5e2c82f7)
+   &emsp;&emsp;&emsp;![](img/media/parte1-1.png)
 
 
 2. Modifique el programa para que, en lugar de resolver el problema con un solo hilo, lo haga con tres, donde cada uno de éstos hará la tarcera parte del problema original. Verifique nuevamente el funcionamiento, y nuevamente revise el uso de los núcleos del equipo.
@@ -31,18 +31,21 @@ Creación, puesta en marcha y coordinación de hilos.
         
 ```
 
-![image](https://github.com/user-attachments/assets/f9300525-e861-4c43-b501-45dd20ac5032)
+&emsp;&emsp;&emsp;![](img/media/parte1-2.png)
+
 
 
 3. Lo que se le ha pedido es: debe modificar la aplicación de manera que cuando hayan transcurrido 5 segundos desde que se inició la ejecución, se detengan todos los hilos y se muestre el número de primos encontrados hasta el momento. Luego, se debe esperar a que el usuario presione ENTER para reanudar la ejecución de los mismo.
 
+<div align="justify">
 Se modifica el main en el sentido de poder iniciar los hilos de manera exitosa, el generar un wait y un notify al momento de sincronizar los hilos y poder generarlos en diferentes momentos por medio del uso de métodos de manera correcta
+</div>
 
-![image](https://github.com/user-attachments/assets/d37a3ebc-2e03-4404-a9ac-01518f4fd4dc)
+&emsp;&emsp;&emsp;![](img/media/parte1-3.png)
 
 Se crean métodos de resume y pause thread que a su misma vez van a permitir que el programa funcione correctamente
 
-
+&emsp;&emsp;&emsp;![](img/media/parte1-4.png)
 ---------------------------------------------------------------------------
 
 
@@ -74,7 +77,7 @@ Taller.
 
     b.  Puede utilizarse el método join() de la clase Thread para sincronizar el hilo que inicia la carrera, con la finalización de los hilos de los galgos.
 
-      ![image](https://github.com/user-attachments/assets/1d00a702-23a2-4600-8a8a-50f4d2c63beb)
+      &emsp;&emsp;&emsp;![](img/media/parte2-join.png)
 
       Se usa el metodo join desde lo requerido para poder ejecutarlo correctamente despues de la linea 38, esto para sincronizar el inicio con el fin de la carrera
 
@@ -91,25 +94,29 @@ Taller.
 
     
 
-4.  Utilice un mecanismo de sincronización para garantizar que a dichas
+3.  Utilice un mecanismo de sincronización para garantizar que a dichas
     regiones críticas sólo acceda un hilo a la vez. Verifique los
     resultados.
-      ![image](https://github.com/user-attachments/assets/a3ca7dc7-12c5-4372-bdff-6b9cd64a0ec7)
+      &emsp;&emsp;&emsp;![](img/media/parte2-sync.png)
+
+
+      &emsp;&emsp;&emsp;![](img/media/parte2-pruebafunc.png)
 
 
 
-5.  Implemente las funcionalidades de pausa y continuar. Con estas,
+
+4.  Implemente las funcionalidades de pausa y continuar. Con estas,
     cuando se haga clic en ‘Stop’, todos los hilos de los galgos
     deberían dormirse, y cuando se haga clic en ‘Continue’ los mismos
     deberían despertarse y continuar con la carrera. Diseñe una solución que permita hacer esto utilizando los mecanismos de sincronización con las primitivas de los Locks provistos por el lenguaje (wait y notifyAll).
 
    En la clase de Galgo
    
-   ![image](https://github.com/user-attachments/assets/1742291f-df17-4639-9d73-8330b5bd7b5f)
+    &emsp;&emsp;&emsp;![](img/media/uso-waitynotify.png)
 
    En el Main
 
-   ![image](https://github.com/user-attachments/assets/6b389b7b-9f75-41ad-a771-562c1b259612)
+    &emsp;&emsp;&emsp;![](img/media/parte2-stopyresume.png)
 
    
 

@@ -37,7 +37,7 @@ public class MainCanodromo {
 
                                     galgos[i].start();                    
                                 }
-
+                            //INICIO IMPLEMENTACION PARTE II
                             for (int i = 0; i < can.getNumCarriles(); i++) {
                                 try {
                                    galgos[i].join();
